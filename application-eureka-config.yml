@@ -1,0 +1,32 @@
+spring:
+  profiles: dev
+  application:
+    name: abcms-eurekaServer-config
+server:
+  port: 8400
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      defaultZone: http://localhost:8400/eureka
+
+---
+spring:
+  profiles: test
+  application:
+    name: abcms-eurekaServer-config
+server:
+  port: 8500
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      defaultZone: http://localhost:8500/eureka
